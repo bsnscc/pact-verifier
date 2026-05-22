@@ -1,0 +1,33 @@
+{
+  "name": "pact-verifier",
+  "version": "0.1.0",
+  "description": "Standalone verifier for bsns.cc pact attestation packets.",
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "pact-verify": "./dist/cli.js",
+    "pact-verify-web": "./dist/server.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "verify": "npm run build && npm test",
+    "start": "node dist/server.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.0",
+    "typescript": "^5.8.3",
+    "vitest": "^4.1.2"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "opentimestamps": "^0.4.9"
+  }
+}
